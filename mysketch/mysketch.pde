@@ -20,9 +20,7 @@ void draw()
 {
 
   // Call the variableEllipse() method and send it the
-
   // parameters for the current mouse position
-
   // and the previous mouse position
 
   variableEllipse(mouseX, mouseY, pmouseX, pmouseY);

@@ -2852,8 +2852,9 @@
 
 /* Header */
 
+
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 2.5em 0 0.1em 0 ;
 	}
 
 		#header .logo {
@@ -2872,7 +2873,7 @@
 			#header .logo > * {
 				display: inline-block;
 				vertical-align: middle;
-			}
+			} 
 
 			#header .logo .symbol {
 				margin-right: 0.65em;
