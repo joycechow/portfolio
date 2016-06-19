@@ -5,9 +5,9 @@ void setup()
 
 {
 
-  size(500, 500);
+  size(1200, 500);
 
-  background(102);
+  background(255,200,200);
 
   smooth();
 
