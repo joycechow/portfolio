@@ -1,61 +1,56 @@
-Bouncer bouncer;
+// All Examples Written by Casey Reas and Ben Fry
+// unless otherwise stated.
 
-  void setup() {
-    size(500,500);
-    frameRate(24);
-    stroke(#003300);
-    fill(#0000FF);
-    bouncer = new Box(width/2,20,20,20);
-  }
+void setup()
 
-  class Box implements Bouncer
-  {
-    int x,y,w,h;
-    int step=0;
+{
 
-    Box(int x, int y, int w, int h) {
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h; }
+  size(500, 500);
 
-    void computeNextStep(int sketch_width, int sketch_height, float frame_rate) {
-    step++;
-    float sin_value = abs(sin(PI/2.0 + (PI*step/(float)frame_rate)));
-    float bounce_height = sketch_height/2 * sin_value;
-    float ball_height = sketch_height - (bounce_height + h);
-    y = (int) (ball_height); }
+  background(102);
 
-    void draw() { rect(x,y,w,h); }
-  }
+  smooth();
+
+}
 
 
-  void draw() {
-    bouncer.computeNextStep(width, height, frameRate);
-    background(#FFFFEE);
-    bouncer.draw();
-  }
 
-  interface Bouncer {
-    void computeNextStep(int width, int height, float framerate);
-    void draw(); }
+void draw() 
 
-  class Ball implements Bouncer
-  {
-    int x,y,radius;
-    int step=0;
+{
 
-    Ball(int x, int y, int r) {
-    this.x = x;
-    this.y = y;
-    this.radius = r;  }
+  // Call the variableEllipse() method and send it the
 
-    void computeNextStep(int sketch_width, int sketch_height, float frame_rate) {
-    step++;
-    float sin_value = abs(sin(PI*step/(float)frame_rate));
-    float bounce_height = sketch_height/2 * sin_value;
-    float ball_height = sketch_height - (bounce_height + radius);
-    y = (int) (ball_height); }
+  // parameters for the current mouse position
 
-    void draw() { ellipse(x,y,radius,radius); }
-  }
+  // and the previous mouse position
+
+  variableEllipse(mouseX, mouseY, pmouseX, pmouseY);
+
+}
+
+
+
+
+
+// The simple method variableEllipse() was created specifically 
+
+// for this program. It calculates the speed of the mouse
+
+// and draws a small ellipse if the mouse is moving slowly
+
+// and draws a large ellipse if the mouse is moving quickly 
+
+
+
+void variableEllipse(int x, int y, int px, int py) 
+
+{
+
+  float speed = abs(x-px) + abs(y-py);
+
+  stroke(speed);
+
+  ellipse(x, y, speed, speed);
+
+}
