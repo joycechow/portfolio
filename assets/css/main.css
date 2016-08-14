@@ -2663,7 +2663,7 @@
 					background-position: center;
 					background-repeat: no-repeat;
 					background-size: 100% 100%;
-					opacity: 0.25;
+					opacity: 0;  /*0.25*/ 
 					z-index: 2;
 				}
 
@@ -2767,7 +2767,7 @@
 				}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
-					opacity: 0;
+					opacity: 0; 
 				}
 
 			body:not(.is-touch) .tiles article:hover .content {
@@ -3366,7 +3366,7 @@ h3
 h3 {
 		font-weight: 500;
 		line-height: 1;
-		margin: 4em 0 1em 0;
+		margin: 3em 0 1em 0;
 
 		letter-spacing: 0.05em;
 }
