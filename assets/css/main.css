@@ -2337,7 +2337,7 @@
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			max-width: 50%;
 		}
 
 			.image.left img, .image.right img {
@@ -2375,6 +2375,8 @@
 			.image.main img {
 				width: 100%;
 			}
+
+
 
 			@media screen and (max-width: 736px) {
 
